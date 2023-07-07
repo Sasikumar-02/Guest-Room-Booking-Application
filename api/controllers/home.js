@@ -28,7 +28,6 @@ export const updatedHome = async(req,res, next)=>{
     }
 }
 
-
 export const deleteHome = async(req,res, next)=>{
     try{
         await Home.findByIdAndDelete(req.params.id);
@@ -82,13 +81,13 @@ export const countByCity = async(req,res, next)=>{
 
 export const countByType = async(req,res, next)=>{
     try{
-        const homeCount = await Home.countDocuments({});
+        const homeCount = await Home.countDocuments({type:"Hotel"});
         const apartmentCount = await Home.countDocuments({type:"apartment"});
         const resortCount = await Home.countDocuments({type: "resort"});
         const villaCount = await Home.countDocuments({type:"villa"});
         const cabinCount = await Home.countDocuments({type:"cabin"});
         res.status(200).json([
-            {type: "home", count: homeCount},
+            {type: "Hotel", count: homeCount},
             {type: "apartments", count: apartmentCount},
             {type: "resorts", count: resortCount},
             {type: "villas", count: villaCount},
@@ -115,10 +114,6 @@ export const countByType = async(req,res, next)=>{
 //     }
 //   };
 
-  
-  
-  
-
 export const getHomeRooms = async (req, res, next) => {
     try {
       const home = await Hotel.findById(req.params.id);
@@ -131,5 +126,4 @@ export const getHomeRooms = async (req, res, next) => {
     } catch (error) {
       next(error);
     }
-  };
-  
+};

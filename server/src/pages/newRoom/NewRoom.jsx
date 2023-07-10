@@ -1,7 +1,7 @@
 import "./newRoom.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+//import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
 import { roomInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
@@ -61,7 +61,7 @@ const NewRoom = () => {
               <div className="formInput">
                 <label>Choose a home</label>
                 <select
-                  id="hotelId"
+                  id="homeId"
                   onChange={(e) => setHomeId(e.target.value)}
                 >
                   {loading

@@ -2,7 +2,6 @@ import "./hotel.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -37,7 +36,7 @@ const Hotel = () => {
     return diffDays;
   }
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  const days = dates ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -52,7 +51,6 @@ const Hotel = () => {
     } else {
       newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
     }
-
     setSlideNumber(newSlideNumber);
   };
 
@@ -63,6 +61,7 @@ const Hotel = () => {
       navigate("/login");
     }
   };
+
   return (
     <div>
       <Navbar />
@@ -98,7 +97,7 @@ const Hotel = () => {
             </div>
           )}
           <div className="hotelWrapper">
-            <button className="bookNow">Reserve or Book Now!</button>
+            {/* <button className="bookNow">Reserve or Book Now!</button> */}
             <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
@@ -143,10 +142,9 @@ const Hotel = () => {
             </div>
           </div>
           <MailList />
-          <Footer />
         </div>
       )}
-      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
+      {openModal && <Reserve setOpen={setOpenModal} homeId={id} />}
     </div>
   );
 };

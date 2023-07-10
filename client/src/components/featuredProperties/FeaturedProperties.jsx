@@ -7,13 +7,13 @@ const FeaturedProperties = () => {
   return (
     <div className="fp">
       {loading ? (
-        "Loading"
+        "Loading..."
       ) : (
         <>
           {data.map((item) => (
             <div className="fpItem" key={item._id}>
               <img
-                src={item.photos[0]}
+                src={"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/a1/9c/80/essentia-luxury-hotel.jpg?w=700&h=-1&s=1"}
                 alt=""
                 className="fpImg"
               />

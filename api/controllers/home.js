@@ -1,6 +1,6 @@
 import { createError } from '../utils/error.js';
 import Home from '../models/Home.js';
-import Room from "../models/Room.js"
+import Room from '../models/Room.js';
 export const createHome = async(req,res, next)=>{
     const newHome = new Home(req.body);
     try{
@@ -31,7 +31,7 @@ export const updatedHome = async(req,res, next)=>{
 export const deleteHome = async(req,res, next)=>{
     try{
         await Home.findByIdAndDelete(req.params.id);
-        res.status(200).json("Hotel has been deleted")
+        res.status(200).json("Home has been deleted")
     }
     catch(error){
         //res.status(500).json(error);
@@ -50,20 +50,20 @@ export const getHome = async(req,res, next)=>{
     }
 };
 
-export const getHomes = async(req,res, next)=>{
-    const {min, max, ...others}=req.query;
-    try{
-        const homes = await Home.find({
-            ...others, 
-            cheapestPrice:{$gt:min | 1, $lt:max || 999},
-        }).limit(req.query.limit)
-        res.status(200).json(homes)
+export const getHomes = async (req, res, next) => {
+    const { min, max, ...others } = req.query;
+    try {
+      const homes = await Home.find({
+        ...others,
+        cheapestPrice: { $gt: min | 1, $lt: max || 999 },
+      }).limit(req.query.limit);
+      res.status(200).json(homes);
+    } catch (error) {
+      next(error);
     }
-    catch(error){
-        next(error);
-    }
-};
-
+  };
+  
+  
 export const countByCity = async(req,res, next)=>{
     const cities = req.query.cities.split(",");
     try{
@@ -116,7 +116,7 @@ export const countByType = async(req,res, next)=>{
 
 export const getHomeRooms = async (req, res, next) => {
     try {
-      const home = await Hotel.findById(req.params.id);
+      const home = await Home.findById(req.params.id);
       const list = await Promise.all(
         home.rooms.map((room) => {
           return Room.findById(room);

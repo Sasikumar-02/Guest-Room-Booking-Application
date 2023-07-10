@@ -1,34 +1,40 @@
 import "./new.scss";
+import { useState } from "react";
+import axios from "axios";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-import { useState } from "react";
-import axios from "axios";
 
 const New = ({ inputs, title }) => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState(null);
   const [info, setInfo] = useState({});
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleClick = async (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "upload");
+
     try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "upload");
+
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/lamadev/image/upload",
-        data
+        "https://api.cloudinary.com/v1_1/dskxx6qyg/image/upload",
+        formData
       );
 
-      const { url } = uploadRes.data;
+      const { secure_url } = uploadRes.data;
 
       const newUser = {
         ...info,
-        img: url,
+        img: secure_url,
       };
 
       await axios.post("/auth/register", newUser);
@@ -37,7 +43,6 @@ const New = ({ inputs, title }) => {
     }
   };
 
-  console.log(info);
   return (
     <div className="new">
       <Sidebar />
@@ -58,7 +63,7 @@ const New = ({ inputs, title }) => {
             />
           </div>
           <div className="right">
-            <form>
+            <form encType="multipart/form-data">
               <div className="formInput">
                 <label htmlFor="file">
                   Image: <DriveFolderUploadOutlinedIcon className="icon" />
@@ -66,7 +71,7 @@ const New = ({ inputs, title }) => {
                 <input
                   type="file"
                   id="file"
-                  onChange={(e) => setFile(e.target.files[0])}
+                  onChange={handleFileChange}
                   style={{ display: "none" }}
                 />
               </div>
@@ -92,3 +97,4 @@ const New = ({ inputs, title }) => {
 };
 
 export default New;
+

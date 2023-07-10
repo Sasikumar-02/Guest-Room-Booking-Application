@@ -111,7 +111,7 @@ const NewHotel = () => {
                 <label>Rooms</label>
                 <select id="rooms" multiple onChange={handleSelect}>
                   {loading
-                    ? "loading"
+                    ? "loading..."
                     : data &&
                       data.map((room) => (
                         <option key={room._id} value={room._id}>

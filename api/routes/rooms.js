@@ -1,25 +1,28 @@
 import express from 'express';
 import Room from '../models/Room.js';
+import Home from '../models/Home.js';
 import { createError } from '../utils/error.js';
-import { createRoom, deleteRoom, getRoom, getRooms, updatedRoom , updateRoomAvailability} from '../controllers/room.js';
+import { createRoom, deleteRoom, getRoom, getRooms, updatedRoom, updateRoomAvailability } from '../controllers/room.js';
 import { verifyAdmin } from '../utils/verifyToken.js';
+
 const router = express.Router();
-//create
-router.post("/:homeid", verifyAdmin, createRoom)
-//update
-router.put("/availability/:id", updateRoomAvailability);
+
+// Create a room for a home
+router.post("/:id", verifyAdmin, createRoom);
+
+// Update a room
 router.put("/:id", verifyAdmin, updatedRoom);
 
-//delete
+// Update room availability
+router.put("/availability/:id", updateRoomAvailability);
 
-router.delete("/:id/:homeid", verifyAdmin, deleteRoom)
+// Delete a room
+router.delete("/:id/:homeId", verifyAdmin, deleteRoom);
 
-//get
+// Get a room
+router.get("/:id", getRoom);
 
-router.get("/:id", getRoom)
-
-//get all
-
-router.get("/", getRooms)
+// Get all rooms
+router.get("/", getRooms);
 
 export default router;

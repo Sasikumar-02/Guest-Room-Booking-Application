@@ -27,8 +27,8 @@ const List = () => {
 
   return (
     <div>
-      <Navbar />
-      <Header type="list" />
+      <Navbar /> {/* Render the Navbar component */}
+      <Header type="list" /> {/* Render the Header component */}
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">

@@ -18,6 +18,7 @@ import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({ type }) => {
+  // State variables for input fields and options
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
@@ -37,7 +38,7 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
-
+  // Handle increment/decrement of option values
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -49,6 +50,7 @@ const Header = ({ type }) => {
 
   const { dispatch } = useContext(SearchContext);
 
+  // Handle search button click
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/homes", { state: { destination, dates, options } });
@@ -62,6 +64,7 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
+          {/* Header navigation items */}
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
@@ -85,6 +88,7 @@ const Header = ({ type }) => {
         </div>
         {type !== "list" && (
           <>
+            {/* Header title and description */}
             <h1 className="headerTitle">
               A lifetime of discounts? It's Genius.
             </h1>
@@ -94,6 +98,7 @@ const Header = ({ type }) => {
             </p>
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
+              {/* Destination input field */}
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
@@ -103,15 +108,19 @@ const Header = ({ type }) => {
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
+              {/* Date range input field */}
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  className="headerIcon"
+                />
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText"
-                >{`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(
-                  dates[0].endDate,
+                >{`${format(
+                  dates[0].startDate,
                   "MM/dd/yyyy"
-                )}`}</span>
+                )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
@@ -123,6 +132,7 @@ const Header = ({ type }) => {
                   />
                 )}
               </div>
+              {/* Options input field */}
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 <span
@@ -197,6 +207,7 @@ const Header = ({ type }) => {
                   </div>
                 )}
               </div>
+              {/* Search button */}
               <div className="headerSearchItem">
                 <button className="headerBtn" onClick={handleSearch}>
                   Search

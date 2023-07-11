@@ -1,13 +1,16 @@
 import { createContext, useEffect, useReducer } from "react";
 
+// Initial state for the AuthContext
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem("user")) || null,
   loading: false,
   error: null,
 };
 
+// Create the AuthContext
 export const AuthContext = createContext(INITIAL_STATE);
 
+// Reducer function for the AuthContext
 const AuthReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":
@@ -39,13 +42,16 @@ const AuthReducer = (state, action) => {
   }
 };
 
+// AuthContextProvider component
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
 
+  // Save user data to localStorage when it changes
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(state.user));
   }, [state.user]);
 
+  // Render the AuthContextProvider with the context values
   return (
     <AuthContext.Provider
       value={{

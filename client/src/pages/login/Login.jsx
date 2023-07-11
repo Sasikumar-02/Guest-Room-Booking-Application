@@ -13,11 +13,11 @@ const Login = () => {
   const { loading, error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate()
-
+  // Function to handle input changes
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-
+  // Function to handle login button click
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });

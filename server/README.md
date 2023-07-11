@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Guest Room Booking Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Guest Room Booking Application is a web-based portal that allows users to search and book rooms in various guest houses or hotels. The application provides a seamless experience for both clients and administrators.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+The Guest Room Booking Application serves as a platform where clients can easily search for available rooms and make bookings, while administrators have access to manage users, guest houses, and room listings. The application leverages modern web technologies such as MongoDB, Express, Node.js for the backend, and React.js for the frontend.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- User Authentication: The application supports user authentication, allowing clients to create accounts and login securely. Administrators have additional privileges to manage user accounts.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Search and Filtering: Clients can search for available rooms based on their preferred location, dates, and other search criteria. The application provides filtering options to refine search results.
 
-### `npm test`
+- Room Listings: Administrators can manage room listings, including adding new rooms, updating existing rooms, and removing rooms from the system. Each room listing contains detailed information about the room, such as photos, amenities, pricing, and availability.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Booking Process: Clients can select a room and proceed to book it for their desired dates. The application handles the booking process, ensuring that the room is reserved for the specified duration and updating availability accordingly.
 
-### `npm run build`
+- User Dashboard: Clients have access to a user dashboard where they can view their bookings, manage their account settings, and track their booking history.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Administrator Dashboard: Administrators have a dedicated dashboard to manage users, view bookings, and update guest house details. They can perform administrative tasks such as adding new users, approving bookings, and modifying guest house information.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Backend: MongoDB, Express, Node.js (MEN stack)
+- Frontend: React.js
+- Additional Libraries/Frameworks: React Router, Axios, Material-UI, SweetAlert
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To install and set up the Guest Room Booking Application locally, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```
+   git clone https://github.com/Sasikumar-02/Guest-Room-Booking-Application
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Change to the project directory:
+   ```
+   For the backend, use `cd api`
+                         
+   For the Client side, use `cd client`
+   
+   For the admin side, use `cd server`
+   
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-## Learn More
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Access the application at [http://localhost:3000](http://localhost:3000) in your web browser.
+Backend server [http://localhost:8100](http://localhost:8100)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contribution
 
-### Code Splitting
+Contributions to the Guest Room Booking Application are welcome! If you would like to contribute, please follow the guidelines outlined in the project's repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries or questions regarding the Guest Room Booking Application, please contact us at [sasikumarm.cs20@bitsathy.ac.in](mailto:sasikumarm.cs20@bitsathy.ac.in) or [sasikumarmurugan02@gmail.com] (mailto:sasikumarmurugan02@gmail.com).

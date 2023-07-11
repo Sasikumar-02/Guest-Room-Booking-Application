@@ -9,15 +9,15 @@ import "./home.css";
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Header/>
+      <Navbar /> {/* Render the Navbar component */}
+      <Header /> {/* Render the Header component */}
       <div className="homeContainer">
-        <Featured/>
+        <Featured /> {/* Render the Featured component */}
         <h1 className="homeTitle">Browse by property type</h1>
-        <PropertyList/>
+        <PropertyList /> {/* Render the PropertyList component */}
         <h1 className="homeTitle">Homes guests love</h1>
-        <FeaturedProperties/>
-        <MailList/>
+        <FeaturedProperties /> {/* Render the FeaturedProperties component */}
+        <MailList /> {/* Render the MailList component */}
       </div>
     </div>
   );

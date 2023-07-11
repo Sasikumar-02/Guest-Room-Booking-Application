@@ -64,10 +64,10 @@ const Hotel = () => {
 
   return (
     <div>
-      <Navbar />
-      <Header type="list" />
+      <Navbar /> {/* Render the Navbar component */}
+      <Header type="list" /> {/* Render the Header component */}
       {loading ? (
-        "loading"
+        "Loading..."
       ) : (
         <div className="hotelContainer">
           {open && (
@@ -97,7 +97,6 @@ const Hotel = () => {
             </div>
           )}
           <div className="hotelWrapper">
-            {/* <button className="bookNow">Reserve or Book Now!</button> */}
             <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
@@ -141,10 +140,10 @@ const Hotel = () => {
               </div>
             </div>
           </div>
-          <MailList />
+          <MailList /> {/* Render the MailList component */}
         </div>
       )}
-      {openModal && <Reserve setOpen={setOpenModal} homeId={id} />}
+      {openModal && <Reserve setOpen={setOpenModal} homeId={id} />} {/* Render the Reserve component */}
     </div>
   );
 };

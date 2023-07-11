@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 
+// Initial state for the search context
 const INITIAL_STATE = {
   city: undefined,
   dates: [],
@@ -10,8 +11,10 @@ const INITIAL_STATE = {
   },
 };
 
+// Create the search context
 export const SearchContext = createContext(INITIAL_STATE);
 
+// Reducer function to handle search state changes
 const SearchReducer = (state, action) => {
   switch (action.type) {
     case "NEW_SEARCH":
@@ -23,6 +26,7 @@ const SearchReducer = (state, action) => {
   }
 };
 
+// Search context provider component
 export const SearchContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
 
@@ -39,22 +43,3 @@ export const SearchContextProvider = ({ children }) => {
     </SearchContext.Provider>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

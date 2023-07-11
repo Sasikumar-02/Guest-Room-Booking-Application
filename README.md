@@ -25,6 +25,7 @@ The Guest Room Booking Application serves as a platform where clients can easily
 - Backend: MongoDB, Express, Node.js (MEN stack)
 - Frontend: React.js
 - Additional Libraries/Frameworks: React Router, Axios, Material-UI, SweetAlert
+- Utilize Postman or insomnia to conduct API testing.
 
 ## Installation
 
@@ -42,7 +43,6 @@ To install and set up the Guest Room Booking Application locally, follow these s
    For the Client side, use `cd client`
    
    For the admin side, use `cd server`
-   
 
 3. Install dependencies:
    ```

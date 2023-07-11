@@ -37,12 +37,12 @@ To install and set up the Guest Room Booking Application locally, follow these s
 
 2. Change to the project directory:
    ```
-   cd api
-   ```
-   cd client
-   ```
-   cd server
-   ```
+   For the backend, use `cd api`
+                         
+   For the Client side, use `cd client`
+   
+   For the admin side, use `cd server`
+   
 
 3. Install dependencies:
    ```
@@ -64,4 +64,4 @@ Contributions to the Guest Room Booking Application are welcome! If you would li
 
 ## Contact
 
-For any inquiries or questions regarding the Guest Room Booking Application, please contact us at [sasikumarm.cs20@bitsathy.ac.in](mailto:sasikumarm.cs20@bitsathy.ac.in) or [sasikumarmurugan02@gmail.com] (mailto:sasikumarmurugan02@gmail.com).
+For any inquiries or questions regarding the Guest Room Booking Application, please contact us at (mailto:sasikumarm.cs20@bitsathy.ac.in) or  (mailto:sasikumarmurugan02@gmail.com).

@@ -54,7 +54,7 @@ To install and set up the Guest Room Booking Application locally, follow these s
    npm start
    ```
 
-5. Access the application at [http://localhost:3000](http://localhost:3000) in your web browser.
+5. Access the Client-Side and Admin-Side application at [http://localhost:3000](http://localhost:3000) in your web browser.
 Backend server [http://localhost:8100](http://localhost:8100)
 
 ## Contribution
